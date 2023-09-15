@@ -14,7 +14,7 @@ function BackButton() {
                 onClick={() => navigate(-1)}
                 icon={<BsArrowLeft />}
             />
-            <Divider gap="20px" />
+            <Divider gap="24px" />
         </Flex>
     );
 }

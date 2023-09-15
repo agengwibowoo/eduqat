@@ -3,7 +3,10 @@ import styled, { css } from "styled-components";
 const baseStyle = css`
     font-family: ${({ theme }) => theme.fontFamily.primary};
     font-weight: ${({ theme }) => theme.fontWeights.normal};
-    font-size: 16px;
+    font-size: ${({ size, theme }) =>
+        size
+            ? theme.fontSizes[size] || theme.fontSizes.base
+            : theme.fontSizes.base};
 `;
 
 const typeStyles = {

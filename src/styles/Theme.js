@@ -15,6 +15,7 @@ const theme = {
         secondary: "Poppins, sans-serif",
     },
     fontSizes: {
+        small: "12px",
         base: "16px",
         h1: "32px",
         h2: "28px",
