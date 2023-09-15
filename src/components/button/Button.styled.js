@@ -30,6 +30,11 @@ const typeStyles = {
         background: #fff;
         color: ${({ theme }) => theme.colors.primary};
     `,
+    plain: css`
+        border: none;
+        background: #fff;
+        color: ${({ theme }) => `1px solid ${theme.colors.default}`};
+    `,
 };
 
 export const StyledButton = styled.button`

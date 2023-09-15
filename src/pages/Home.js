@@ -1,11 +1,8 @@
-import GlobalStyles from "../styles/Global";
-import Theme from "../styles/Theme";
 import Text from "../components/text/Text";
 import Title from "../components/title/Title";
 import Button from "../components/button/Button";
 import Flex from "../components/flex/Flex";
 import Divider from "../components/divider/Divider";
-import Navbar from "../components/navbar/Navbar";
 import Tabs from "../components/tabs/Tabs";
 import Tab from "../components/tabs/Tab";
 import Card from "../components/card/Card";
@@ -28,18 +25,8 @@ import { Link } from "react-router-dom";
 
 function Home() {
     return (
-        <Theme>
-            <GlobalStyles />
-            <Navbar>
-                testing 123
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/event">Event</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </Navbar>
+        <>
+            <Link to="/event">Event</Link>
             <Flex>
                 <div>test</div>
                 <Divider type="bullet" />
@@ -92,7 +79,7 @@ function Home() {
             <PiDotsThreeVerticalBold />
             <PiDotsThreeBold />
             <PiDotsSixVerticalBold />
-        </Theme>
+        </>
     );
 }
 

@@ -12,13 +12,13 @@ export const StyledDivider = styled.div`
                 width: 4px;
                 height: 4px;
                 border-radius: 50%;
-                margin: 0 10px;
+                margin: ${({ gap }) => `0px ${gap || "10px"}`};
             `;
         } else {
             return css`
                 width: 1px;
                 height: auto;
-                margin: 4px 10px;
+                margin: ${({ gap }) => `4px ${gap || "10px"}`};
             `;
         }
     }}
