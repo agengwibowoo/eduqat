@@ -32,7 +32,7 @@ function index({ sessions }) {
                             )
                         )
                     ) : (
-                        <Flex>No Lessons</Flex>
+                        <Flex justifyContent="center">No Lessons</Flex>
                     )}
                     <Flex alignItems="center" gap="16px">
                         <Button icon={<AiOutlinePlus />} />
@@ -42,7 +42,7 @@ function index({ sessions }) {
             </Card>
         ))
     ) : (
-        <Flex>No Sessions</Flex>
+        <Flex justifyContent="center">No Sessions</Flex>
     );
 }
 
