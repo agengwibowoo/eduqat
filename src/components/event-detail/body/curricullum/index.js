@@ -5,11 +5,12 @@ import EventCurricullumSession from "./session";
 import Flex from "../../../flex/Flex";
 import Button from "../../../button/Button";
 
-function index() {
+function index({ data }) {
+    const { schedule, sessions } = data || {};
     return (
         <Flex flexDirection="column" gap="27px">
-            <EventCurricullumSchedule schedule={new Date()} />
-            <EventCurricullumSession />
+            <EventCurricullumSchedule schedule={schedule} />
+            <EventCurricullumSession sessions={sessions} />
             <Flex justifyContent="end">
                 <Button icon={<AiOutlinePlus />} size="large">
                     Add Session

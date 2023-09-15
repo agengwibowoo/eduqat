@@ -7,19 +7,42 @@ import Flex from "../../../../flex/Flex";
 import Button from "../../../../button/Button";
 import Text from "../../../../text/Text";
 
-function index() {
-    return (
-        <Card>
-            <Flex flexDirection="column" gap="16px">
-                <EventCurricullumSessionHeader title="session 1" />
-                <EventCurricullumLesson title="Judul 1" />
-                <EventCurricullumLesson title="Judul 2" />
-                <Flex alignItems="center" gap="16px">
-                    <Button icon={<AiOutlinePlus />} />
-                    <Text>Add Lesson Material</Text>
+function index({ sessions }) {
+    return sessions?.length ? (
+        sessions.map(({ session_title, lessons }) => (
+            <Card>
+                <Flex flexDirection="column" gap="16px">
+                    <EventCurricullumSessionHeader title={session_title} />
+                    {lessons?.length ? (
+                        lessons.map(
+                            ({
+                                lesson_title,
+                                schedule,
+                                duration,
+                                type,
+                                is_required,
+                            }) => (
+                                <EventCurricullumLesson
+                                    title={lesson_title}
+                                    schedule={schedule}
+                                    duration={duration}
+                                    type={type}
+                                    is_required={is_required}
+                                />
+                            )
+                        )
+                    ) : (
+                        <Flex>No Lessons</Flex>
+                    )}
+                    <Flex alignItems="center" gap="16px">
+                        <Button icon={<AiOutlinePlus />} />
+                        <Text>Add Lesson Material</Text>
+                    </Flex>
                 </Flex>
-            </Flex>
-        </Card>
+            </Card>
+        ))
+    ) : (
+        <Flex>No Sessions</Flex>
     );
 }
 

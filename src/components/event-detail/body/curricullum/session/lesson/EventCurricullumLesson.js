@@ -24,23 +24,29 @@ const ActionIcon = styled(PiDotsThreeVerticalBold)`
     ${iconBaseStyle}
 `;
 
-function EventCurricullumLesson({ title }) {
+function EventCurricullumLesson({
+    title,
+    schedule,
+    duration,
+    type,
+    is_required,
+}) {
     return (
         <Card bordered={false} padding="4px">
             <Flex justifyContent="space-between" alignItems="center" gap="0px">
                 <Flex alignItems="center" gap="0px">
                     <Flex alignItems="center" gap="16px">
                         <DraggableIcon />
-                        <LessonIcon type="video" />
+                        <LessonIcon type={type} />
                         <Text>{title}</Text>
                     </Flex>
-                    <RequiredLesson isRequired />
+                    <RequiredLesson isRequired={is_required} />
                 </Flex>
                 <Flex alignItems="center" gap="24px">
                     <Flex alignItems="center" gap="0px">
-                        <LessonSchedule schedule={new Date()} />
+                        <LessonSchedule schedule={schedule} />
                         <Divider type="bullet" />
-                        <LessonDuration duration={150} />
+                        <LessonDuration duration={duration} />
                         <Divider type="bullet" />
                         <LessonDownloadable />
                     </Flex>

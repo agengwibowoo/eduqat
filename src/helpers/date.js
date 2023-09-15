@@ -1,6 +1,6 @@
-import { format as dateFnsFormat } from "date-fns";
+import { format as dateFnsFormat, isValid, parseISO } from "date-fns";
 
 export const getFormattedDate = (date, format = "dd MMMM yyyy") => {
-    if (!date) return null;
-    return dateFnsFormat(date, format);
+    if (!date && !isValid(date)) return null;
+    return dateFnsFormat(parseISO(date), format);
 };
