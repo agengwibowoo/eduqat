@@ -9,6 +9,7 @@
                     "schedule": "2023-09-15T14:30:00Z",
                     "sessions": [
                         {
+                            "id": "S1",
                             "session_title": "Session 1",
                             "lessons": [
                                 {
@@ -35,30 +36,9 @@
                             ]
                         },
                         {
+                            "id": "S2",
                             "session_title": "Session 2",
-                            "lessons": [
-                                {
-                                    "duration": 150,
-                                    "is_required": true,
-                                    "lesson_title": "Video 1",
-                                    "schedule": "2023-09-15T14:30:00Z",
-                                    "type": "video"
-                                },
-                                {
-                                    "duration": 35,
-                                    "is_required": true,
-                                    "lesson_title": "Video 2",
-                                    "schedule": "2023-09-15T14:30:00Z",
-                                    "type": "video"
-                                },
-                                {
-                                    "duration": 115,
-                                    "is_required": true,
-                                    "lesson_title": "Video 3",
-                                    "schedule": "2023-09-15T14:30:00Z",
-                                    "type": "onsite"
-                                }
-                            ]
+                            "lessons": []
                         }
                     ]
                 }

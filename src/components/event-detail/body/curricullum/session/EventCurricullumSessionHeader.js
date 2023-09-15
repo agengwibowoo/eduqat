@@ -5,6 +5,14 @@ import { AiOutlineEdit } from "react-icons/ai";
 import Flex from "../../../../flex/Flex";
 import Title from "../../../../title/Title";
 import Button from "../../../../button/Button";
+import {
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItemOption,
+    MenuList,
+} from "@chakra-ui/menu";
+import { IconButton } from "@chakra-ui/button";
 
 const iconBaseStyle = css`
     font-size: ${({ theme }) => theme.fontSizes.h3};
@@ -23,15 +31,37 @@ const ActionIcon = styled(PiDotsThreeBold)`
     ${iconBaseStyle}
 `;
 
-function EventCurricullumSessionHeader({ title }) {
+function EventCurricullumSessionHeader({
+    title,
+    handleEditSession,
+    handleDeleteSession,
+    id,
+}) {
     return (
         <Flex justifyContent="space-between">
             <Flex alignItems="center" gap="8px">
                 <DraggableIcon />
                 <Title level={3}>{title}</Title>
-                <Button icon={<EditIcon />} type="plain" />
+                <Button
+                    onClick={() => handleEditSession(id)}
+                    icon={<EditIcon />}
+                    type="plain"
+                />
             </Flex>
-            <Button icon={<ActionIcon />} type="ghost" size="small" />
+            <Menu>
+                <MenuButton
+                    as={IconButton}
+                    aria-label="Options"
+                    icon={<ActionIcon />}
+                    variant="outline"
+                />
+                <MenuList>
+                    <MenuItem onClick={() => handleDeleteSession(id)}>
+                        Delete Session
+                    </MenuItem>
+                </MenuList>
+            </Menu>
+            {/* <Button icon={<ActionIcon />} type="ghost" size="small" /> */}
         </Flex>
     );
 }

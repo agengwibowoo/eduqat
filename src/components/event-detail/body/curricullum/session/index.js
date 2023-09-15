@@ -7,12 +7,17 @@ import Flex from "../../../../flex/Flex";
 import Button from "../../../../button/Button";
 import Text from "../../../../text/Text";
 
-function index({ sessions }) {
+function index({ handleEditSession, handleDeleteSession, sessions }) {
     return sessions?.length ? (
-        sessions.map(({ session_title, lessons }) => (
+        sessions.map(({ session_title, lessons, id }) => (
             <Card>
                 <Flex flexDirection="column" gap="16px">
-                    <EventCurricullumSessionHeader title={session_title} />
+                    <EventCurricullumSessionHeader
+                        handleEditSession={handleEditSession}
+                        handleDeleteSession={handleDeleteSession}
+                        title={session_title}
+                        id={id}
+                    />
                     {lessons?.length ? (
                         lessons.map(
                             ({

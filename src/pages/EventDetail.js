@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import Body from "../components/body/Body";
 import EventDetailHeader from "../components/event-detail/header";
@@ -9,9 +9,9 @@ import { getEventDetail } from "../helpers/data";
 import Text from "../components/text/Text";
 
 function EventDetail() {
-    const [events, setEvents] = useState(eventData.event_list);
     const { id: id_ } = useParams();
-    const { id, event_title, last_update, content } = getEventDetail(events, id_) || {};
+    const { id, event_title, last_update, content } =
+        getEventDetail(eventData.event_list, id_) || {};
     return (
         <Body>
             {id ? (
