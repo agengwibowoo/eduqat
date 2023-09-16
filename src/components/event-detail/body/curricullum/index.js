@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import EventCurricullumSchedule from "./EventCurricullumSchedule";
 import EventCurricullumSession from "./session";

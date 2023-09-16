@@ -14,7 +14,6 @@ import {
     Input,
     FormErrorMessage,
     Select,
-    Switch,
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 import { addLesson, editLesson } from "../../../helpers/data";
