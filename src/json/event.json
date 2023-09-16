@@ -13,6 +13,7 @@
                             "session_title": "Session 1",
                             "lessons": [
                                 {
+                                    "id": "S1-L1",
                                     "duration": 150,
                                     "is_required": true,
                                     "lesson_title": "Video 1",
@@ -20,6 +21,7 @@
                                     "type": "video"
                                 },
                                 {
+                                    "id": "S1-L2",
                                     "duration": 35,
                                     "is_required": true,
                                     "lesson_title": "Video 2",
@@ -27,6 +29,7 @@
                                     "type": "video"
                                 },
                                 {
+                                    "id": "S1-L3",
                                     "duration": 115,
                                     "is_required": true,
                                     "lesson_title": "Video 3",

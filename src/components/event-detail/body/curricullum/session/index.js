@@ -7,7 +7,13 @@ import Flex from "../../../../flex/Flex";
 import Button from "../../../../button/Button";
 import Text from "../../../../text/Text";
 
-function index({ handleEditSession, handleDeleteSession, sessions }) {
+function index({
+    handleEditSession,
+    handleDeleteSession,
+    handleDeleteLesson,
+    sessions,
+    openModalLesson,
+}) {
     return sessions?.length ? (
         sessions.map(({ session_title, lessons, id }) => (
             <Card>
@@ -21,6 +27,7 @@ function index({ handleEditSession, handleDeleteSession, sessions }) {
                     {lessons?.length ? (
                         lessons.map(
                             ({
+                                id: lesson_id,
                                 lesson_title,
                                 schedule,
                                 duration,
@@ -28,11 +35,16 @@ function index({ handleEditSession, handleDeleteSession, sessions }) {
                                 is_required,
                             }) => (
                                 <EventCurricullumLesson
+                                    session_id={id}
+                                    id={lesson_id}
                                     title={lesson_title}
                                     schedule={schedule}
                                     duration={duration}
                                     type={type}
                                     is_required={is_required}
+                                    lesson_title={lesson_title}
+                                    openModalLesson={openModalLesson}
+                                    handleDeleteLesson={handleDeleteLesson}
                                 />
                             )
                         )
@@ -40,7 +52,12 @@ function index({ handleEditSession, handleDeleteSession, sessions }) {
                         <Flex justifyContent="center">No Lessons</Flex>
                     )}
                     <Flex alignItems="center" gap="16px">
-                        <Button icon={<AiOutlinePlus />} />
+                        <Button
+                            onClick={() =>
+                                openModalLesson("add", { session_id: id })
+                            }
+                            icon={<AiOutlinePlus />}
+                        />
                         <Text>Add Lesson Material</Text>
                     </Flex>
                 </Flex>

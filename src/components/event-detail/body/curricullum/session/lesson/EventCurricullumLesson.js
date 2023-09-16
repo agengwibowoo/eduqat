@@ -10,7 +10,8 @@ import LessonSchedule from "./LessonSchedule";
 import Divider from "../../../../../divider/Divider";
 import LessonDuration from "./LessonDuration";
 import LessonDownloadable from "./LessonDownloadable";
-import Button from "../../../../../button/Button";
+import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu";
+import { IconButton } from "@chakra-ui/button";
 
 const iconBaseStyle = css`
     font-size: ${({ theme }) => theme.fontSizes.h3};
@@ -30,6 +31,11 @@ function EventCurricullumLesson({
     duration,
     type,
     is_required,
+    lesson_title,
+    session_id,
+    id,
+    openModalLesson,
+    handleDeleteLesson,
 }) {
     return (
         <Card bordered={false} padding="4px">
@@ -50,7 +56,34 @@ function EventCurricullumLesson({
                         <Divider type="bullet" />
                         <LessonDownloadable />
                     </Flex>
-                    <Button icon={<ActionIcon />} type="ghost" size="small" />
+                    <Menu>
+                        <MenuButton
+                            as={IconButton}
+                            aria-label="Options"
+                            icon={<ActionIcon />}
+                            variant="outline"
+                        />
+                        <MenuList>
+                            <MenuItem
+                                onClick={() =>
+                                    openModalLesson("edit", {
+                                        session_id,
+                                        id,
+                                        duration,
+                                        required: is_required,
+                                        schedule,
+                                        title: lesson_title,
+                                        type,
+                                    })
+                                }
+                            >
+                                Edit Lesson
+                            </MenuItem>
+                            <MenuItem onClick={() => handleDeleteLesson(id)}>
+                                Delete Lesson
+                            </MenuItem>
+                        </MenuList>
+                    </Menu>
                 </Flex>
             </Flex>
         </Card>

@@ -9,7 +9,6 @@ import {
     Menu,
     MenuButton,
     MenuItem,
-    MenuItemOption,
     MenuList,
 } from "@chakra-ui/menu";
 import { IconButton } from "@chakra-ui/button";
@@ -61,7 +60,6 @@ function EventCurricullumSessionHeader({
                     </MenuItem>
                 </MenuList>
             </Menu>
-            {/* <Button icon={<ActionIcon />} type="ghost" size="small" /> */}
         </Flex>
     );
 }
